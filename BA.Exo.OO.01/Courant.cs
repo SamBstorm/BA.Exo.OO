@@ -44,6 +44,16 @@ namespace BA.Exo.OO._01
                 if (montant <= LigneDeCredit + Solde) Solde -= montant; //Gérer message d'erreur
             }
         }
+
+        public static double operator +(Courant left, Courant right)
+        {
+            double solde_left = 0, solde_right = 0;
+            if (left.Solde > 0) solde_left = left.Solde;
+            if (right.Solde > 0) solde_right = right.Solde;
+            return solde_left + solde_right;
+
+            //return ((left.Solde > 0) ? left.Solde : 0) + ((right.Solde > 0) ? right.Solde : 0); //en une ligne
+        }
         #endregion
 
 
