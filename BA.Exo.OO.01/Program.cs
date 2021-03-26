@@ -35,6 +35,30 @@ namespace BA.Exo.OO._01
             banque.Supprimer("BE557620...");
             Console.WriteLine(banque["BE557620..."]?.Titulaire?.Nom);
             #endregion
+            #region Exo03
+            banque.Ajouter(courant);
+            Courant c1 = new Courant();
+            c1.Numero = "BE364512...";
+            c1.Titulaire = personne;
+            c1.LigneDeCredit = 200;
+            c1.Retrait(150);
+            banque.Ajouter(c1);
+            Personne p1 = new Personne();
+            p1.Nom = "Stalone";
+            p1.Prenom = "Sylverster";
+            p1.DateNaiss = new DateTime(1972, 5, 1);
+            Courant c2 = new Courant();
+            c2.Numero = "BE999999...";
+            c2.Titulaire = p1;
+            c2.LigneDeCredit = 200;
+            c2.Depot(6000);
+            c2.Retrait(150);
+            banque.Ajouter(c2);
+
+            banque.AvoirDesComptes(personne);
+            banque.AvoirDesComptes(p1);
+            banque.AvoirDesComptes(new Personne() { Nom = "Stalone", Prenom = "Sylverster", DateNaiss = new DateTime(1972, 5, 1) });
+            #endregion
         }
     }
 }

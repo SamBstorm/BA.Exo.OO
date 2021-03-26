@@ -40,6 +40,20 @@ namespace BA.Exo.OO._01
         {
             if(!_comptes.Remove(numero)) return; //Gérer message d'erreur 
         }
+
+        public double AvoirDesComptes(Personne titulaire)
+        {
+            double totalDesAvoirs = 0;
+            foreach (KeyValuePair<string,Courant> kvp in _comptes)
+            {
+                Courant compte = kvp.Value;
+                if(compte.Titulaire == titulaire)
+                {
+                    totalDesAvoirs += compte;
+                }
+            }
+            return totalDesAvoirs;
+        }
         #endregion
     }
 }

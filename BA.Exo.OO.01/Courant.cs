@@ -54,6 +54,14 @@ namespace BA.Exo.OO._01
 
             //return ((left.Solde > 0) ? left.Solde : 0) + ((right.Solde > 0) ? right.Solde : 0); //en une ligne
         }
+        public static double operator +(double left, Courant right)
+        {
+            double solde_right = 0;
+            if (right.Solde > 0) solde_right = right.Solde;
+            return left + solde_right;
+
+            //return left + ((right.Solde > 0) ? right.Solde : 0); //en une ligne
+        }
         #endregion
 
 
