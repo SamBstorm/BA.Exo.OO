@@ -6,6 +6,7 @@ namespace BA.Exo.OO._01
     {
         static void Main(string[] args)
         {
+            #region Exo01
             Courant courant = new Courant();
 
             Personne personne = new Personne();
@@ -21,6 +22,19 @@ namespace BA.Exo.OO._01
             courant.Depot(5000);
             courant.Retrait(200.0);
             courant.Retrait(20000.0);
+            #endregion
+            #region Exo02
+            Banque banque = new Banque();
+            banque.Nom = "MetsTesSousIci";
+            banque[courant.Numero] = courant;
+            banque.Ajouter(courant);
+            banque.Ajouter(courant);
+            Console.WriteLine(banque["BE557620..."]?.Titulaire?.Nom);
+            banque["BE557620..."].Depot(5000);
+            banque.Supprimer("BE557620...");
+            banque.Supprimer("BE557620...");
+            Console.WriteLine(banque["BE557620..."]?.Titulaire?.Nom);
+            #endregion
         }
     }
 }
