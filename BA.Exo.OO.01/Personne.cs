@@ -30,7 +30,10 @@ namespace BA.Exo.OO._01
 
         #endregion
         #region Methods
-
+        public override string ToString()
+        {
+            return $"{Nom} {Prenom} {DateNaiss}";
+        }
         #endregion
     }
 }

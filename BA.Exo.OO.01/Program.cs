@@ -14,6 +14,7 @@ namespace BA.Exo.OO._01
             personne.Nom = "Willis";
             personne.Prenom = "Bruce";
             personne.DateNaiss = new DateTime(1968, 8, 14);
+            Console.WriteLine(personne);
 
             courant.Numero = "BE557620...";
             courant.Titulaire = personne;
