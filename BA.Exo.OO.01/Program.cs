@@ -60,6 +60,13 @@ namespace BA.Exo.OO._01
             banque.AvoirDesComptes(p1);
             banque.AvoirDesComptes(new Personne() { Nom = "Stalone", Prenom = "Sylverster", DateNaiss = new DateTime(1972, 5, 1) });
             #endregion
+            #region Exo04
+            Epargne e = new Epargne();
+            e.Numero = "BE444444...";
+            e.Titulaire = p1;
+            e.Depot(6000);
+            e.Retrait(50);
+            #endregion
         }
     }
 }

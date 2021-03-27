@@ -4,21 +4,13 @@ using System.Text;
 
 namespace BA.Exo.OO._01
 {
-    public class Courant
+    public class Courant : Compte
     {
         #region Champs
-        private double _solde;
         private double _ligneDeCredit;
         #endregion
         #region Props
-        public string Numero { get; set; }
-        public Personne Titulaire { get; set; }
         //public double Solde { get; private set; }
-        public double Solde
-        {
-            get { return _solde; }
-            private set { _solde = value; }
-        }
 
         public double LigneDeCredit
         {
@@ -33,16 +25,10 @@ namespace BA.Exo.OO._01
 
         #endregion
         #region Methods
-        public void Depot(double montant)
+        
+        public override void Retrait(double montant)
         {
-            if (montant > 0) Solde += montant; //Gérer message d'erreur
-        }
-        public void Retrait(double montant)
-        {
-            if (montant > 0) //Gérer message d'erreur
-            {
-                if (montant <= LigneDeCredit + Solde) Solde -= montant; //Gérer message d'erreur
-            }
+            base.Retrait(montant, LigneDeCredit);
         }
 
         public static double operator +(Courant left, Courant right)
